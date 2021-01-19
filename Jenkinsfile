@@ -4,11 +4,11 @@ pipeline {
         stage('Build') { 
             agent {
                 docker {
-                    image 'python:2-alpine' 
+                    image 'python:latest' 
                 }
             }
             steps {
-                sh 'python -m py_compile sources/hello.py' 
+                sh 'python -m py_compile hello.py' 
             }
         }
     }
