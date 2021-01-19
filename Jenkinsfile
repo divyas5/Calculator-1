@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'python -m py_compile hello.py' 
+                sh 'python -m py_compile sources/hello.py' 
             }
         }
     }
