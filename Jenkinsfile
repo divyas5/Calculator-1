@@ -1,16 +1,12 @@
 pipeline {
-    agent none 
+    agent { dockerfile true }
     stages {
-        stage('Build') { 
-            agent {
-                docker {
-                    image 'python:latest' 
-                }
-            }
+        stage('Test') {
             steps {
-                sh 'python -m py_compile hello.py' 
+                sh 'echo check'
+                sh 'python --version'
+                sh 'python myscript.py'
             }
         }
     }
 }
-               
